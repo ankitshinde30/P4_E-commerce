@@ -30,7 +30,7 @@ const Popular = () => {
                 
                 
                 data_products.map((item,i) => {
-                    return <Item key={i} image={item.image} name={item.name} new_price={item.new_price} old_price={item.old_price} />
+                    return <Item key={i} id={item.id} image={item.image} name={item.name} new_price={item.new_price} old_price={item.old_price} />
                 })
                 }
         </div>
