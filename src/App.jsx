@@ -7,6 +7,8 @@ import Navbar from './components/Navbar/Navbar'; // Assuming Navbar is used for 
 import Cart from './pages/Cart'; // Corrected capitalization for "Cart"
 import LoginSignup from './pages/LoginSignup'; // Ensure this file exists
 import { useState } from 'react'; // Import useState only if needed
+import Footer from "./components/Footer/Footer";
+
 
 function App() {
   // Remove count and setCount if not used
@@ -17,7 +19,7 @@ function App() {
       <Router>
         {/* Navbar (renders on all pages) */}
         <Navbar />
-
+       
         <Routes>
           {/* Home Route */}
           <Route path="/" element={<Shop />} />
@@ -33,7 +35,9 @@ function App() {
           {/* Login/Signup Route */}
           <Route path="/loginsignup" element={<LoginSignup />} />
         </Routes>
+        <Footer/>
       </Router>
+      
     </div>
   );
 }
