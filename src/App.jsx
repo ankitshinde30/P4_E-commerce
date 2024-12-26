@@ -1,47 +1,49 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Shop from './pages/Shop'; // Corrected import (capitalized S in Shop)
-import Product from './pages/Product'; // Ensure this file exists
-import ShopCategory from './pages/ShopCategory'; // Ensure this file exists
-import Navbar from './components/Navbar/Navbar'; // Assuming Navbar is used for navigation
-import Cart from './pages/Cart'; // Corrected capitalization for "Cart"
-import LoginSignup from './pages/LoginSignup'; // Ensure this file exists
-import { useState } from 'react'; // Import useState only if needed
-import Footer from "./components/Footer/Footer";
-import men_banner from "./components/Assets/banner_mens.png";  // Corrected import path  
-import women_banner from "./components/Assets/banner_women.png";  // Corrected import path
-import kid_banner from "./components/Assets/banner_kids.png";  // Corrected import path
-
-
+import Shop from './pages/Shop'; // Home page
+import Product from './pages/Product'; // Single product page
+import ShopCategory from './pages/ShopCategory'; // Category pages
+import Navbar from './components/Navbar/Navbar'; // Navigation bar
+import Cart from './pages/Cart'; // Cart page
+import LoginSignup from './pages/LoginSignup'; // Login/Signup page
+import Footer from './components/Footer/Footer'; // Footer
+import NotFound from './pages/Notfound'; // 404 page
+import men_banner from './components/Assets/banner_mens.png';  
+import women_banner from './components/Assets/banner_women.png';  
+import kid_banner from './components/Assets/banner_kids.png';  
 
 function App() {
-  // Remove count and setCount if not used
-  const [count, setCount] = useState(0);
-
   return (
     <div className="App">
       <Router>
         {/* Navbar (renders on all pages) */}
         <Navbar />
-       
+
         <Routes>
           {/* Home Route */}
           <Route path="/" element={<Shop />} />
+
           {/* Category Routes */}
-          <Route path="/mens" element={<ShopCategory  banner={men_banner} category="men" />} />
+          <Route path="/mens" element={<ShopCategory banner={men_banner} category="men" />} />
           <Route path="/womens" element={<ShopCategory banner={women_banner} category="women" />} />
           <Route path="/kids" element={<ShopCategory banner={kid_banner} category="kid" />} />
+
           {/* Product Routes */}
-          <Route path="/product" element={<Product />} />
           <Route path="/product/:productId" element={<Product />} />
+
           {/* Cart Route */}
           <Route path="/cart" element={<Cart />} />
+
           {/* Login/Signup Route */}
-          <Route path="/loginsignup" element={<LoginSignup />} />
+          <Route path="/login" element={<LoginSignup />} />
+
+          {/* 404 Not Found Route */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
-        <Footer/>
+
+        {/* Footer (renders on all pages) */}
+        <Footer />
       </Router>
-      
     </div>
   );
 }
