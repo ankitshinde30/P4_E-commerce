@@ -1,4 +1,11 @@
 import React, {useContext} from "react";
+import { useParams } from "react-router-dom";
+import { ShopContext } from "../context/ShopContext";
+import Breadcrumb from "../components/Breadcrums/Breadcrum";
+import ProductDisplay from "../components/ProductDisplay/ProductDisplay";
+
+
+
 
 
 const Product = () => {
@@ -8,6 +15,8 @@ const Product = () => {
     return (
         <div>
            <Breadcrumb product={product} />
+              <ProductDisplay product={product} />
+
         </div>
     );
 }
