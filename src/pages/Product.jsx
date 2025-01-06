@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { ShopContext } from "../context/ShopContext";
 import Breadcrumb from "../components/Breadcrums/Breadcrum";
 import ProductDisplay from "../components/ProductDisplay/ProductDisplay";
+import DescriptionBox from "../components/DescriptionBox/DescriptionBox";
 
 
 
@@ -16,6 +17,8 @@ const Product = () => {
         <div>
            <Breadcrumb product={product} />
               <ProductDisplay product={product} />
+              <DescriptionBox />
+
 
         </div>
     );
