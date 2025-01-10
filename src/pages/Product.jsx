@@ -4,6 +4,7 @@ import { ShopContext } from "../context/ShopContext";
 import Breadcrumb from "../components/Breadcrums/Breadcrum";
 import ProductDisplay from "../components/ProductDisplay/ProductDisplay";
 import DescriptionBox from "../components/DescriptionBox/DescriptionBox";
+import RelatedProducts from "../components/RelatedProducts/RelatedProducts";
 
 
 
@@ -18,6 +19,7 @@ const Product = () => {
            <Breadcrumb product={product} />
               <ProductDisplay product={product} />
               <DescriptionBox />
+              <RelatedProducts  />
 
 
         </div>
